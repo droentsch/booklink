@@ -1,0 +1,35 @@
+<div class="container-fluid top-margin-lg">
+    <div style="position: absolute;top: 50%;left: 50%;" ng-show="showThrobber"><img src="app/img/throbber.gif">
+    </div>
+    <div class="row" ng-show="showServerError">
+        <div class="col-sm-4 col-sm-offset-4 alert alert-danger alert-dismissible text-center" role="alert" ng-show="showServerError">
+            <button ng-click="closeServerError()" type="button" class="close"><span>&times;</span>
+            </button>
+            <strong>{{serverError}}</strong>
+        </div>
+    </div>
+    <textflow-novella></textflow-novella>
+    <div class="row top-margin-md form-horizontal">
+        <div class="col-sm-1 col-sm-offset-1 checkbox-inline">
+            <label>
+                <input id="cbxEbook" type="checkbox" ng-click='toggleEbook()' ng-model='masterUi.showEbooks'> EBook</label>
+        </div>
+    </div>
+    <div ng-show="masterUi.showEbooks">
+        <ebook-panels>
+            <ebook-panel ng-repeat="book in orderedBooks track by $index" info="{index: $index, data:book}"></ebook-panel>
+        </ebook-panels>
+    </div>
+</div>
+<div class="footer footer-sticky">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2 col-sm-offset-1">
+                <div class="btn-group">
+                    <button class="btn btn-default" id="btnCancel" ng-click='closeApp()'>Cancel</button>
+                    <button class="btn btn-default" id="btnSave" ng-click='save()'>Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

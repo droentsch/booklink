@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <button onclick="openWindow();">launch ebook</button>
+
+    <script>
+        var CHILD_LOCATION = 'index.html?_=1234567';
+        var WINDOW_SETTINGS = 'left = 0, top = 0, toolbar = 0, status = 0, location=no, scrollbars=yes';
+        var WINDOW_NAME = 'Ebook Configuration';
+
+        var ebookWindowOpener = {};
+        
+        var openWindow = function () {
+            window.open(CHILD_LOCATION, WINDOW_NAME, WINDOW_SETTINGS);
+        };
+        ebookWindowOpener.getEbookData = function () {
+                return {
+    "courseISBN": "0000001280",
+    "type": "PRODUCTS",
+    "ebooks": [{
+        "productId": 251412974,
+        "productType": "SMARTBOOK_RESOURCES",
+        "externalProductId": "A9B0137035",
+        "isLooseleafEnabled": true,
+        "looseleafISBN": "DUMMY1234",
+        "isPrimary": true,
+        "title": "Smartbook LR",
+        "edition": "12th",
+        "authors": [{
+            "firstName": "Dan",
+            "lastName": "G",
+            "isPrimary": true
+        }],
+        "imageUrl": "https://s3.amazonaws.com/connect-nonprod.mheducation.com/connect/dev/dev2/book_resources/1433845382102/Brown12e12tlm_complete_nm2.jpg?AWSAccessKeyId\u003dAKIAJMXFRYAKY3DG2MGQ\u0026Expires\u003d1479143764\u0026Signature\u003dn3GS9y0Bi90zcLqNFM%2FrkIRrIsA%3D",
+        "imageId": "1433845382102"
+    }, {
+        "productId": 251392978,
+        "productType": "MHEREADER",
+        "externalProductId": "A9R0140363",
+        "isLooseleafEnabled": false,
+        "looseleafISBN": "DUMMY1234",
+        "isPrimary": false,
+        "title": "Mhereader A9R0140363",
+        "edition": "12th",
+        "authors": [{
+            "firstName": "Dan",
+            "lastName": "R",
+            "isPrimary": true
+        }],
+        "imageUrl": "https://s3.amazonaws.com/connect-nonprod.mheducation.com/connect/dev/dev2/book_resources/1433845432630/book.jpg?AWSAccessKeyId\u003dAKIAJMXFRYAKY3DG2MGQ\u0026Expires\u003d1479143764\u0026Signature\u003d7sFCHAmVZ2UC3ytl44mKziDq0VM%3D",
+        "imageId": "1433845432630"
+    }, {
+        "productId": 251392978,
+        "productType": "MHEREADER",
+        "externalProductId": "A9R0107402",
+        "isLooseleafEnabled": false,
+        "isPrimary": false,
+        "title": "MHeReader A9R0107402",
+        "edition": "3",
+        "authors": [{
+            "firstName": "Yo",
+            "lastName": "Mamma",
+            "isPrimary": true
+        }],
+        "imageUrl": "https://s3.amazonaws.com/connect-nonprod.mheducation.com/connect/dev/dev2/book_resources/1436742024550/Shier_13e_AP_Cover_200pix.gif?AWSAccessKeyId\u003dAKIAJMXFRYAKY3DG2MGQ\u0026Expires\u003d1479143764\u0026Signature\u003dY9DXW2w9Ma%2BWokqSWEAQHLteA6c%3D",
+        "imageId": "1436742024550"
+    }]
+};
+        };
+    </script>
+</body>
+
+</html>

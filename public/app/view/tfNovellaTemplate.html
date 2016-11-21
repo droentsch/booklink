@@ -1,0 +1,27 @@
+<div class="row top-margin-md form-horizontal">
+    <ebook-validation exceptions="exceptions" show="showValidationAlert" ng-show="showValidationAlert"></ebook-validation>
+    <div class="col-sm-1 col-sm-offset-1 checkbox-inline">
+        <label>
+            <input id="cbxTextflowNovella" ng-click='toggleTextFlowNovella()' ng-model='masterUi.showTextFlowNovella' type="checkbox"> TextFlow or Novella</label>
+    </div>
+    <div class="col-sm-2">
+        <div class="selectEffects">
+            <select id="selectTfNovella" ng-model="tfNovellaType" class=form-control ng-disabled="!masterUi.showTextFlowNovella">
+                <option value="">--Choose One--</option>
+                <option value="TEXTFLOW">Text Flow</option>
+                <option value="NOVELLA">Novella</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-sm-2">
+        <input type="text" class="form-control" id="textTfNovellaISBM" ng-model="tfNovellaIsbn" placeholder="ISBN" ng-disabled="!masterUi.showTextFlowNovella">
+    </div>
+    <div class="col-sm-1 col-sm-offset-1 checkbox-inline">
+        <label>
+            <input id="cbxTfnLooseLeafEnabled" ng-model="hasLooseLeaf" type="checkbox" ng-click="looseleafChecked()" ng-disabled="!masterUi.showTextFlowNovella"> Looseleaf Enabled</label>
+    </div>
+    <div class="col-sm-2">
+        <input type="text" class="form-control" id="textTfnLooseLeafISBM" ng-model="looseLeafIsbn" ng-show="hasLooseLeaf" placeholder="LooseLeaf ISBN" ng-disabled="!masterUi.showTextFlowNovella">
+    </div>
+
+</div>

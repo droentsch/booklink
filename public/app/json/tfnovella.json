@@ -1,0 +1,10 @@
+{
+    "type": 1,
+    "courseIsbn" : 987654321,
+    "eBooks": [{
+        "externalId": "0077351231",
+        "providerName": "textflow",
+        "looseleaf": true,
+        "looseleafIsbn": "2342342234"
+    }]
+}

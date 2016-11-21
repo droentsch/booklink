@@ -1,0 +1,25 @@
+<div>
+    <div class="modal-header">
+        <h2 class="modal-title">{{msg.header}}</h2>
+    </div>
+    <div class="modal-body">
+        <div>
+            <h3>{{msg.lead}}</h3>
+        </div>
+        <ul>
+            <li class="text-danger">{{msg.bullet1}}</li>
+            <li class="text-danger">{{msg.bullet2}}</li>
+            <li class="text-danger">{{msg.bullet3}}</li>
+            <li class="text-danger top-margin-md">{{msg.bullet4}}</li>
+            <li class="text-danger top-margin-md">{{msg.bullet5}}</li>
+        </ul>
+        <div class="top-margin-md checkbox-inline" ng-class="{'has-error':isInvalidSave}">
+            <label>
+                <input type="checkbox" ng-model="isAgreementSelected" ng-click="hideError()" id="cbxIUnderstand">{{msg.checkboxText}}</label>&nbsp;&nbsp;<span class="glyphicon glyphicon-exclamation-sign" ng-show="isInvalidSave"></span>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="row form-horizontal has-error" ng-hide='ui.hideAuthorPanel'>
+    <div class="col-sm-12">
+        <ebook-validation exceptions="authorExceptions" show="showAuthorValidationAlert" ng-show="showAuthorValidationAlert" width="'widest'"></ebook-validation>
+    </div>
+    <div class="col-sm-12">
+        <input type="text" placeholder="First Name" name="firstName" ng-model='ui.authorFirstName'>
+    </div>
+    <div class="col-sm-12 top-margin-sm">
+        <input type="text" placeholder="Last Name" ng-model='ui.authorLastName'>
+    </div>
+    <div class="col-sm-12 top-margin-md">
+        <button class="btn btn-default" ng-click="addAnotherAuthor()">Add Another</button>
+        <button class="btn btn-default" ng-click='closeAuthorPanel()'>Done</button>
+    </div>
+</div>

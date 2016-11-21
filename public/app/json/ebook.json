@@ -1,0 +1,41 @@
+{
+    "type": 2,
+    "eBooks": [{
+        "isPrimary": true,
+        "productId": 251392978,
+        "externalId": "1231313131313131313131313",
+        "looseleaf": true,
+        "looseleafIsbn": "2342342234",
+        "providerName": "",
+        "imageId": "ABC123",
+        "imageUrl": "http://s.hswstatic.com/gif/11-celebrity-canines.jpg",
+        "title": "Cujo ",
+        "edition": "Big Dog Memorial Edition",
+        "authors": [
+            {
+                "firstName": "Stephen ",
+                "lastName": "King ",
+                "isPrimary": true
+                }, {
+                "firstName": "Ben",
+                "lastName": "Prefacewriter",
+                "isPrimary": false
+                }
+            ]
+        }, {
+        "isPrimary": false,
+        "productId": 251412974,
+        "externalId": "654321",
+        "looseleaf": true,
+        "looseleafIsbn": "2342342234",
+        "imageId": "ABC124",
+        "imageUrl": "http://c2.bibtopia.com/h/466/244/55244466.0.m.jpg",
+        "title": "The Decameron ",
+        "edition": "Italian Gold Edition ",
+        "authors": [{
+            "firstName": "Giovanni ",
+            "lastName": "Bocaccio",
+            "isPrimary": true
+            }]
+    }]
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+	<button onclick="openWindow();">launch ebook</button>
+
+	<script>
+        var CHILD_LOCATION = 'index.html?_=1234567';
+        var WINDOW_SETTINGS = 'left = 0, top = 0, toolbar = 0, status = 0, location=no, scrollbars=yes';
+        var WINDOW_NAME = 'Ebook Configuration';
+
+        var ebookWindowOpener = {};
+        
+        var openWindow = function () {
+            window.open(CHILD_LOCATION, WINDOW_NAME, WINDOW_SETTINGS);
+        };
+        ebookWindowOpener.getEbookData = function () {
+            return {
+                "courseISBN": "0000000001",
+                "type": "PROVIDER",
+                "ebooks": [{
+                    "productId": 0,
+                    "providerName": "textflow",
+                    "externalProductId": "0077262549",
+                    "isLooseleafEnabled": true,
+                    "looseleafISBN": "1259314316",
+                    "isPrimary": false
+                }]
+            };
+        };
+    </script>
+</body>
+
+</html>

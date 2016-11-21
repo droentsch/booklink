@@ -1,0 +1,36 @@
+{
+  "name": "ng",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gruntfile.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "compression": "^1.6.2",
+    "connect": "3.3.4",
+    "express": "^4.14.0",
+    "grunt": "0.4.5",
+    "grunt-contrib-copy": "0.8.0",
+    "jasmine-core": "2.2.0",
+    "karma": "0.12.31",
+    "karma-jasmine": "0.3.5",
+    "karma-phantomjs-launcher": "0.1.4",
+    "multer": "^1.2.0",
+    "phantomjs": "1.9.16",
+    "request": "^2.78.0",
+    "serve-static": "^1.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Dan Roentsch",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-sync": "^0.2.3",
+    "jasmine-debug": "^0.1.1",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-requirejs": "^0.2.2",
+    "requirejs": "^2.1.16"
+  }
+}

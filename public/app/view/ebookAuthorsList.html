@@ -1,0 +1,11 @@
+<div class="col-sm-3 col-sm-offset-1 top-margin-xl">
+    <div ng-repeat="author in $parent.data.authors track by $index">
+        <div class="row">
+            <div class="col-sm-12">
+                <a class="link-list"><span ng-show="editable" class="btn btn-link" ng-click="deleteAuthor($index)">&times;</span> {{author.firstName}}&nbsp;{{author.lastName}}</a>
+                <input type="radio" name="primaryChooser" id="$index" value="{{author.Id}}" ng-hide="author.isPrimary" ng-checked="author.isPrimary" ng-model="author.isPrimary" ng-change="updateAuthors($index)"> &nbsp;
+                <span class="badge" ng-hide="!author.isPrimary">Primary</span>
+            </div>
+        </div>
+    </div>
+</div>

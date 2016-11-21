@@ -1,0 +1,84 @@
+<div class="row top-margin-md">
+    <div class="col-sm-12">
+        <hr />
+    </div>
+</div>
+<div class="row top-margin-md">
+    <div class="col-sm-12">
+        <h1><mark>{{elementName}}</mark></h1>
+    </div>
+</div>
+<ebook-validation exceptions="exceptions" show="showValidationAlert" ng-show="showValidationAlert"></ebook-validation>
+<div class="row top-margin-md form-horizontal">
+    <div class="col-sm-2 col-sm-offset-1">
+        <div class="selectEffects">
+            <select ng-model="type" ng-change="onTypeChange()" ng-options="type as type.productName for type in productTypes" id="selectEbookType" class=form-control>
+                <option value="" selected>--Choose EBook Type--</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-sm-2">
+        <input type="text" class="form-control" id="textEbookExternalId" ng-model="data.externalId" placeholder="External Product ID" ng-show="!search()">
+        <div class="input-group" ng-show="search()">
+            <input type="text" class="form-control" id="textEbookExternalId" ng-model="searchId" placeholder="Search by External Product ID">
+            <span class="input-group-btn">
+            <button id="btnSearch" class="btn btn-default button-margin-left" ng-click="searchService()">Search</button>
+        </span>
+        </div>
+    </div>
+    <div class="col-sm-1 col-sm-offset-2 checkbox-inline">
+        <label>
+            <input ng-model="data.looseLeaf" id="cbxTfnLooseLeafEnabled" type="checkbox" ng-click="looseleafChecked()"> Looseleaf Enabled</label>
+    </div>
+    <div class="col-sm-2">
+        <input type="text" class="form-control" id="textTfnLooseLeafISBM" ng-model="data.looseLeafIsbn" ng-show="data.looseLeaf" placeholder="LooseLeaf ISBN">
+    </div>
+</div>
+<!--Row for title/edition and image upload-->
+<div class="row top-margin-md">
+    <div class="col-sm-2 col-sm-offset-1 form-horizontal">
+        <div class="row  form-group">
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="textTitle" ng-model="data.title" placeholder="Title" ng-disabled="!data.editable">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="textEdition" ng-model="data.edition" ng-disabled="!data.editable" placeholder="Edition">
+            </div>
+        </div>
+        <div class="row form-group" ng-show="data.editable">
+            <div class="col-sm-12">
+                <a class="badge" ng-click='toggleAuthorPanel()'>Author(s)</a>
+            </div>
+        </div>
+        <ebook-authors-input></ebook-authors-input>
+    </div>
+    <ebook-authors-list editable="data.editable"></ebook-authors-list>
+    <div class="col-sm-5 input-group">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-4 medium-img no-border">
+                <img ng-src="{{data.imageUrl}}" alt="" title="" class="img-thumbnail">
+                <div>
+                    <div class="alert alert-warning alert-dismissible" role="alert" ng-show="serverErrorOnImageUpload">
+                        <button ng-click="closeServerError()" type="button" class="close"><span>&times;</span>
+                        </button>
+                        <strong>An error occurred at the server</strong> Try later, maybe?
+                    </div>
+                    <input type="file" ng-show="data.editable" ng-file-select class="well" ng-model="files" data-role="chooseFile" accept="image/*">
+                    <div class="alert alert-danger alert-dismissible" role="alert" ng-show='badImage'>Acceptable dimensions for images are {{acceptableWidth}} wide by {{acceptableHeight}} high. Maximum size is {{acceptableWeight}}MB
+                    </div>
+                    <button class="btn btn-default top-margin-sm" ng-click="upload()" ng-show="uploadReady" data-role-ebook="btnUploadFile">{{uploadImageText}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-2 col-sm-offset-1">
+        <button id="btnDelete" class="btn btn-default" ng-show="!data.isPrimary" ng-click="deletePanel()">Delete</button>
+        <button id="btnAddSupplemental" class="btn btn-default" ng-click='addNewPanel()' ng-hide="maxIsReached">{{addButtonText}}</button>
+    </div>
+</div>
+
+</div>
